@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         manager.beginTransaction().add(R.id.frame_container, fragment1)
                 .add(R.id.frame_container1, fragment2)
-                .add(R.id.frame_container2, fragnent3).commitNow();
+                .add(R.id.frame_container2, fragnent3).commit();
 
 
         Bundle bundle = new Bundle();
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
 
         mLoader = getSupportLoaderManager().initLoader(1999, bundle, this);
-        mLoader.forceLoad();
+       mLoader.forceLoad();
     }
 
     @NonNull
@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     class MyTasl extends AsyncTask<Integer, Integer, Integer> {
         @Override
         protected Integer doInBackground(Integer... integers) {
+
+
 
             Random rand = new Random();
 
